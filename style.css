@@ -249,21 +249,31 @@ a {
 
 .site-nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem 0.75rem;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.55rem;
   margin-left: auto;
   justify-content: flex-end;
-  max-width: min(72vw, 58rem);
+  min-width: 0;
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.site-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .site-nav a {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.07em;
   color: var(--muted);
   transition: color 0.25s var(--ease);
   position: relative;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .site-nav a::after {
